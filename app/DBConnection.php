@@ -8,14 +8,14 @@ use Dotenv;
 use PDO;
 use PDOException;
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . "../..");
-$dotenv->load();
-
 final class DBConnection
 {
-    public object $conn;
+    private object $conn;
     public function __construct()
     {
+        $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '../..');
+        $dotenv->load();
+
         try {
             $this->conn = new PDO(
                 'mysql:dbname=shortly;host=localhost',
