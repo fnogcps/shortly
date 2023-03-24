@@ -1,6 +1,6 @@
 <div align="center">
   <h1>Shortly</h1>
-  <p>📷 ✂️ URL shortener built with Slim PHP</p>
+  <p>✂️ URL shortener built with Slim PHP</p>
   <img src="https://img.shields.io/github/license/fnogcps/shortly?color=green&style=for-the-badge" />
   <img src="https://img.shields.io/github/last-commit/fnogcps/shortly?style=for-the-badge" />
   <br/>
