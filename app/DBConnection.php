@@ -13,14 +13,15 @@ final class DBConnection
     private object $conn;
     public function __construct()
     {
-        $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '../..');
-        $dotenv->load();
+        Dotenv\Dotenv::createImmutable(__DIR__. '../..')->load();
+        $dsn = $_SERVER['DB_ADAPTER'] . ':dbname=shortly;host='.
+        $_SERVER['DB_HOST']. ';port='. $_SERVER['DB_PORT'];
 
         try {
             $this->conn = new PDO(
-                'mysql:dbname=shortly;host=localhost',
-                $_ENV['DB_USER'],
-                $_ENV['DB_PWD']
+                $dsn,
+                $_SERVER['DB_USER'],
+                $_SERVER['DB_PWD']
             );
 
             $this->conn->setAttribute(
