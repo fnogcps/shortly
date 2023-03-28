@@ -18,7 +18,7 @@ final class Link
     public function create(string $url, string $code): string
     {
         $query = $this->db->prepare('
-            INSERT INTO shortly.links VALUES (null, ?, ?)
+            INSERT INTO links (code, target) VALUES (?, ?)
         ');
 
         $query->bindValue(1, $code, PDO::PARAM_STR);
@@ -30,7 +30,7 @@ final class Link
     public function get(string $code): string
     {
         $query = $this->db->prepare('
-            SELECT target FROM shortly.links WHERE code = ?
+            SELECT target FROM links WHERE code = ?
         ');
 
         $query->bindValue(1, $code, PDO::PARAM_STR);
