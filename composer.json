@@ -25,6 +25,11 @@
     "require-dev": {
         "nunomaduro/phpinsights": "^2.7"
     },
+   "scripts": {
+	"start": [
+	 	"php -S 0.0.0.0:8000 -t public"
+	]
+    },
     "config": {
         "allow-plugins": {
             "dealerdirect/phpcodesniffer-composer-installer": true
